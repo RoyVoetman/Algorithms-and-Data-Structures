@@ -18,6 +18,12 @@ University assignments for Algorithms and Data Structures in Java.
 * Hashing
 * Graphs
 
+## Books
+Introduction to Java Programming: Brief Version, 10th Edition
+by Y. Daniel Liang
+- ISBN-13: 978-0133592207
+- ISBN-10: 0133592200
+
 ## Author
 
 * Roy Voetman
