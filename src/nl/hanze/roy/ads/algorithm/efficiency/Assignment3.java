@@ -1,4 +1,4 @@
-package nl.hanze.roy.ads.algorithmEfficiency;
+package nl.hanze.roy.ads.algorithm.efficiency;
 
 import java.io.BufferedReader;
 import java.io.IOException;
