@@ -1,72 +1,46 @@
 package nl.hanze.roy.ads.algorithm.efficiency;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.Scanner;
-import java.util.stream.Stream;
 
 /**
- * Search for longest sequence of the same number
+ * Determine if string 2 is a substring of string 1
  *
  * Algorithm efficiency O(n)
  */
 public class Assignment3 {
-    public static void main(String[] args) throws IOException {
-        System.out.println("Enter a series of numbers ending with 0: ");
-        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        String string = reader.readLine();
+    public static void main(String[] args) {
+        System.out.print("Enter string 1: ");
+        String string1 = (new Scanner(System.in)).next();
+        System.out.print("Enter string 2: ");
+        String string2 = (new Scanner(System.in)).next();
 
-        String[] segments = string.split(" ");
-
-        int[] askedInts = Stream.of(segments)
-                .mapToInt(Integer::parseInt)
-                .toArray();
-
-        int[] resultV = sameNumber(askedInts);
-
-        System.out.println("The longest same number sequence starts at index " + resultV[0] + " with " + resultV[1] + " values of " + resultV[2]);
+        System.out.println("matched at index: " + patternMatching(string1, string2));
     }
 
-    public static int[] sameNumber(int[] askedInts) {
-        int longestStart = -1;
-        int longestLength = -1;
-        int longestValue = -1;
+    public static int patternMatching(String s1, String s2) {
+        char[] chars1 = s1.toCharArray();
+        char[] chars2 = s2.toCharArray();
 
-        int currentStart = 0;
-        int currentValue = 0;
-        boolean foundSequence = false;
+        int patternStart = -1;
+        int patternLength = 0;
 
-        for (int i = 1; i < askedInts.length; i++) {
-            if(askedInts[i - 1] == askedInts[i]) {
-                if(currentStart == 0) {
-                    currentValue = askedInts[i];
-                    currentStart = i - 1;
-                    foundSequence = true;
-                }
-            } else {
-                if(foundSequence) {
-                    foundSequence = false;
+        for (int i = 0; i < chars1.length; i++) {
+            if(chars1[i] != chars2[patternLength]) {
+                patternLength = 0;
+                continue;
+            }
 
-                    if(i - currentStart > longestLength) {
-                        longestLength = i - currentStart;
-                        longestValue = currentValue;
-                        longestStart = currentStart;
-                    }
-                }
+            if(patternLength == 0) {
+                patternStart = i;
+            }
 
-                currentStart = 0;
-                currentValue = 0;
+            patternLength++;
+
+            if(patternLength == chars2.length) {
+                break;
             }
         }
 
-        // No sequence found, default to first number
-        if(longestStart == -1) {
-            longestStart = 0;
-            longestLength = 1;
-            longestValue = askedInts[0];
-        }
-
-        return new int[]{longestStart, longestLength, longestValue};
+        return patternStart;
     }
 }
