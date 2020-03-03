@@ -8,6 +8,9 @@ University assignments for Algorithms and Data Structures in Java.
 * Generics
 * Algorithm efficiency (Big O notation)
 * Sorting algorithms
+  * Bubble sort
+  * Merge sort
+  * Quick sort
 
 ### Week 2
 * Data structures
