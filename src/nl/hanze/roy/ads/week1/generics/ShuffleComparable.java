@@ -1,4 +1,4 @@
-package nl.hanze.roy.ads.generics;
+package nl.hanze.roy.ads.week1.generics;
 
 import java.util.ArrayList;
 import java.util.Collections;

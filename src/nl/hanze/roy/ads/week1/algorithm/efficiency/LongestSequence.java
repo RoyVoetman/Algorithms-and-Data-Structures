@@ -1,9 +1,8 @@
-package nl.hanze.roy.ads.algorithm.efficiency;
+package nl.hanze.roy.ads.week1.algorithm.efficiency;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Scanner;
 import java.util.stream.Stream;
 
 /**

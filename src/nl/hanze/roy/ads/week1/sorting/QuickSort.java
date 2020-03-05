@@ -1,4 +1,4 @@
-package nl.hanze.roy.ads.sorting;
+package nl.hanze.roy.ads.week1.sorting;
 
 public class QuickSort {
     public static <E extends Comparable<E>> void quickSort(E[] list, int low, int high) {

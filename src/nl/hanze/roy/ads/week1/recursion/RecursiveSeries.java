@@ -1,4 +1,4 @@
-package nl.hanze.roy.ads.recursion;
+package nl.hanze.roy.ads.week1.recursion;
 
 public class RecursiveSeries {
     static float series(float i) {

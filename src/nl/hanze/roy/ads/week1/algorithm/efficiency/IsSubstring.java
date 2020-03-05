@@ -1,4 +1,4 @@
-package nl.hanze.roy.ads.algorithm.efficiency;
+package nl.hanze.roy.ads.week1.algorithm.efficiency;
 
 import java.util.Scanner;
 

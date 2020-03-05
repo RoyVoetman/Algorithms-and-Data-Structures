@@ -1,4 +1,4 @@
-package nl.hanze.roy.ads.sorting;
+package nl.hanze.roy.ads.week1.sorting;
 
 import java.util.Comparator;
 

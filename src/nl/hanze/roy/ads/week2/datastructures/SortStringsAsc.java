@@ -1,4 +1,4 @@
-package nl.hanze.roy.ads.datastructures;
+package nl.hanze.roy.ads.week2.datastructures;
 
 import java.io.*;
 import java.util.ArrayList;
