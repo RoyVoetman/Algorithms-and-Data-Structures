@@ -1,8 +1,6 @@
 package nl.hanze.roy.ads.sorting;
 
-import java.util.Arrays;
-
-public class Assignment3 {
+public class QuickSort {
     public static <E extends Comparable<E>> void quickSort(E[] list, int low, int high) {
         if (low < high) {
             int p = partition(list, low, high);

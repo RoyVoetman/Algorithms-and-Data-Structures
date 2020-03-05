@@ -2,7 +2,7 @@ package nl.hanze.roy.ads.recursion;
 
 import java.util.Arrays;
 
-public class Assignment13 {
+public class RecursiveArrayMax {
     static int arrayMaxNumber(int[] array) {
         return arrayMaxNumber(array, -1);
     }

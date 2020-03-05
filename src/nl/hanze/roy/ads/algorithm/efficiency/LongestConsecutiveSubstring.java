@@ -7,7 +7,7 @@ import java.util.Scanner;
  *
  * Algorithm efficiency O(n)
  */
-public class Assignment1 {
+public class LongestConsecutiveSubstring {
     public static void main(String[] args) {
         System.out.print("Enter a string: ");
         String string = (new Scanner(System.in)).next();

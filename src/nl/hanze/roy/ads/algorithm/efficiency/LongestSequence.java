@@ -11,7 +11,7 @@ import java.util.stream.Stream;
  *
  * Algorithm efficiency O(n)
  */
-public class Assignment5 {
+public class LongestSequence {
     public static void main(String[] args) throws IOException {
         System.out.println("Enter a series of numbers ending with 0: ");
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));

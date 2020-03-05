@@ -7,7 +7,7 @@ import java.util.Scanner;
  *
  * Algorithm efficiency O(n)
  */
-public class Assignment3 {
+public class IsSubstring {
     public static void main(String[] args) {
         System.out.print("Enter string 1: ");
         String string1 = (new Scanner(System.in)).next();

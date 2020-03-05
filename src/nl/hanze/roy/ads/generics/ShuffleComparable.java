@@ -3,7 +3,7 @@ package nl.hanze.roy.ads.generics;
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class Assignment8 {
+public class ShuffleComparable {
     public static <E extends Comparable<E>> void shuffle(ArrayList<E> list) {
         Collections.shuffle(list);
     }
@@ -15,7 +15,7 @@ public class Assignment8 {
         list.add(2);
         list.add(3);
 
-        Assignment8.shuffle(list);
+        ShuffleComparable.shuffle(list);
 
         System.out.println(list);
     }

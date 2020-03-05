@@ -2,7 +2,7 @@ package nl.hanze.roy.ads.sorting;
 
 import java.util.Arrays;
 
-public class Assignment2 {
+public class MergeSort {
     public static <E extends Comparable<E>> void mergeSort(E[] list) {
         if (list.length <= 1) {
             return;

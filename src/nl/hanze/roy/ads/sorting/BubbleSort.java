@@ -2,7 +2,7 @@ package nl.hanze.roy.ads.sorting;
 
 import java.util.Comparator;
 
-public class Assignment1 {
+public class BubbleSort {
     public static <E extends Comparable<E>> void bubbleSort(E[] list) {
         int loop = list.length-1;
         boolean swapped;
