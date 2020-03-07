@@ -7,7 +7,7 @@ public class BubbleSort {
         int loop = list.length-1;
         boolean swapped;
 
-        for (int i = 0; i < loop; i++) {
+        for (int i = 0; i < list.length  - i; i++) {
             swapped = false;
 
             for (int j = 0; j < loop; j++) {
@@ -50,12 +50,12 @@ public class BubbleSort {
     }
 
     public static void main(String[] args) {
-        Digit[] list1 = new Digit[]{new Digit(3),new Digit(5),new Digit(2),new Digit(2),new Digit(1),new Digit(4),new Digit(7)};
-        Digit[] list2= new Digit[]{new Digit(3),new Digit(5),new Digit(2),new Digit(2),new Digit(1),new Digit(4),new Digit(7)};
+        Digit[] list1 = new Digit[]{new Digit(3),new Digit(5),new Digit(2),new Digit(2),new Digit(1),new Digit(4),new Digit(7), new Digit(1), new Digit(1), new Digit(77), new Digit(4)};
 
         bubbleSort(list1);
 
         System.out.println("List 1");
+
         for (Digit digit : list1) {
             System.out.print(digit + ", ");
         }
