@@ -30,7 +30,7 @@ public class BubbleSort {
         int loop = list.length-1;
         boolean swapped;
 
-        for (int i = 0; i < loop; i++) {
+        for (int i = 0; i < list.length  - i; i++) {
             swapped = false;
 
             for (int j = 0; j < loop; j++) {
