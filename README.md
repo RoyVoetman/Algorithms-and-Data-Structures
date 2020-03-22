@@ -21,6 +21,14 @@ University assignments for Algorithms and Data Structures in Java.
 * Hashing
 * Graphs
 
+### Week 4
+* Backtracking
+* Dynamic programming
+* Path finding algorithms
+  * Dijkstra
+  * A*
+* Minimax algorithm
+
 ## Books
 Introduction to Java Programming: Brief Version, 10th Edition<br>
 by Y. Daniel Liang
