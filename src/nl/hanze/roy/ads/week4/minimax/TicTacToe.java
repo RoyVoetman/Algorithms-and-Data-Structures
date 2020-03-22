@@ -8,13 +8,17 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class TicTacToe {
-    private char[][] board;
+    public static final int SCORE = 0;
+    public static final int ROW = 1;
+    public static final int COLUMN = 2;
 
     private static final Map<String, Integer> stateToScore = new HashMap<String, Integer>() {{
         put("O wins", 10);
         put("X wins", -10);
         put("draw", 0);
     }};
+
+    private char[][] board;
 
     public TicTacToe() {
         this.board = new char[3][3];
@@ -33,41 +37,22 @@ public class TicTacToe {
     private void AIMove() {
         char[][] board = Arrays.stream(this.board).map(char[]::clone).toArray(char[][]::new);
 
-        int bestRow = -1;
-        int bestColumn = -1;
-        int bestScore = Integer.MIN_VALUE;
-        int score;
+        int[] move = minimax(board, true);
 
-        for (int row = 0; row < board.length; row++) {
-            for (int column = 0; column < board[row].length; column++) {
-                if (board[row][column] != '\u0000') continue;
-
-                board[row][column] = 'O';
-                score = minimax(board, false);
-                board[row][column] = '\u0000';
-
-                if (score > bestScore) {
-                    bestScore = score;
-                    bestRow = row;
-                    bestColumn = column;
-                }
-            }
-        }
-
-       // System.out.println(bestScore);
-
-        this.board[bestRow][bestColumn] = 'O';
+        this.board[move[ROW]][move[COLUMN]] = 'O';
     }
 
-    private int minimax(char[][] board, boolean isAIMove) {
+    private int[] minimax(char[][] board, boolean isAIMove) {
         // Base case
         String curState = state(board);
         if (!curState.equals("In progress")) {
-            return stateToScore.get(curState);
+            return new int[]{stateToScore.get(curState)};
         }
 
-        int score;
+        int bestRow = -1;
+        int bestColumn = -1;
         int bestScore;
+        int[] move;
 
         // Building the tree
         if (isAIMove) {
@@ -77,11 +62,13 @@ public class TicTacToe {
                     if (board[row][column] != '\u0000') continue;
 
                     board[row][column] = 'O';
-                    score = minimax(board, false);
+                    move = minimax(board, false);
                     board[row][column] = '\u0000';
 
-                    if (score > bestScore) {
-                        bestScore = score;
+                    if (move[SCORE] > bestScore) {
+                        bestScore = move[SCORE];
+                        bestRow = row;
+                        bestColumn = column;
                     }
                 }
             }
@@ -93,17 +80,19 @@ public class TicTacToe {
                     if (board[row][column] != '\u0000') continue;
 
                     board[row][column] = 'X';
-                    score = minimax(board, true);
+                    move = minimax(board, true);
                     board[row][column] = '\u0000';
 
-                    if (score < bestScore) {
-                        bestScore = score;
+                    if (move[SCORE] < bestScore) {
+                        bestScore = move[SCORE];
+                        bestRow = row;
+                        bestColumn = column;
                     }
                 }
             }
         }
 
-        return bestScore;
+        return new int[]{bestScore, bestRow, bestColumn};
     }
 
     public String state() {
@@ -184,7 +173,6 @@ public class TicTacToe {
 
         do {
             System.out.println(game);
-            System.out.println(game.state());
             boolean success;
 
             do {
@@ -224,19 +212,5 @@ public class TicTacToe {
         }
 
         return coordinates;
-    }
-}
-
-class Node {
-    int row;
-    int column;
-    char[][] board;
-    int score;
-
-    public Node(char[][] board, int row, int column, int score) {
-        this.row = row;
-        this.column = column;
-        this.board = board;
-        this.score = score;
     }
 }
