@@ -55,39 +55,22 @@ public class TicTacToe {
         int[] move;
 
         // Building the tree
-        if (isAIMove) {
-            bestScore = Integer.MIN_VALUE;
-            for (int row = 0; row < board.length; row++) {
-                for (int column = 0; column < board[row].length; column++) {
-                    if (board[row][column] != '\u0000') continue;
+        bestScore = (isAIMove) ? Integer.MIN_VALUE : Integer.MAX_VALUE;
 
-                    board[row][column] = 'O';
-                    move = minimax(board, false);
-                    board[row][column] = '\u0000';
+        for (int row = 0; row < board.length; row++) {
+            for (int column = 0; column < board[row].length; column++) {
+                if (board[row][column] != '\u0000') continue;
 
-                    if (move[SCORE] > bestScore) {
-                        bestScore = move[SCORE];
-                        bestRow = row;
-                        bestColumn = column;
-                    }
-                }
-            }
+                board[row][column] = (isAIMove) ? 'O' : 'X';
+                move = minimax(board, !isAIMove);
+                board[row][column] = '\u0000';
 
-        } else {
-            bestScore = Integer.MAX_VALUE;
-            for (int row = 0; row < board.length; row++) {
-                for (int column = 0; column < board[row].length; column++) {
-                    if (board[row][column] != '\u0000') continue;
-
-                    board[row][column] = 'X';
-                    move = minimax(board, true);
-                    board[row][column] = '\u0000';
-
-                    if (move[SCORE] < bestScore) {
-                        bestScore = move[SCORE];
-                        bestRow = row;
-                        bestColumn = column;
-                    }
+                // If it is an AI move maximize the score
+                // Or if it is not an AI move minimize the score
+                if ((isAIMove && move[SCORE] > bestScore) || (!isAIMove && move[SCORE] < bestScore)) {
+                    bestScore = move[SCORE];
+                    bestRow = row;
+                    bestColumn = column;
                 }
             }
         }
