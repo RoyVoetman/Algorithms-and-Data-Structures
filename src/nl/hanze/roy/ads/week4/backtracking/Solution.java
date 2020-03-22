@@ -1,7 +1,6 @@
-package nl.hanze.roy.ads.week4.backtracking.cards;
+package nl.hanze.roy.ads.week4.backtracking;
 
 import java.util.Stack;
-import java.util.*;
 
 /**
  * the solution is a sequence of cards placed on the board according to the card positions

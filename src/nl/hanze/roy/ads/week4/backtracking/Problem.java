@@ -1,4 +1,4 @@
-package nl.hanze.roy.ads.week4.backtracking.cards;
+package nl.hanze.roy.ads.week4.backtracking;
 
 import java.util.Scanner;
 
