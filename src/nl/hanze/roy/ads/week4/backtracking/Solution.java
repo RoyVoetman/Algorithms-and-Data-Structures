@@ -35,7 +35,7 @@ public class Solution extends Stack<Candidate> {
      * next free position.
      */
     public boolean fits(Candidate candidate) {
-        // Determine positions of new cells
+        // Determine positions of new cell
         int index = this.size();
         int currRow = row[index];
         int currCol = column[index];
