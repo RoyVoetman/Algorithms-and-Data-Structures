@@ -14,7 +14,8 @@ University assignments for Algorithms and Data Structures in Java.
 
 ### Week 2
 * Data structures
-* MyList
+* Lists
+* Sets
 * SearchTree
 
 ### Week 3
